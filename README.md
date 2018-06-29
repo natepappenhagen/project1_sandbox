@@ -30,7 +30,7 @@ to keep it interesting there will be a random battle selector to determine if th
 
                                                   *Battle Logic*
 
-* This examples assume:
+This examples assume:
   Player 1 => attacks => Player 2
     1. (TW) total win no loss in army. Player 1 gains territory.
     
@@ -42,7 +42,7 @@ to keep it interesting there will be a random battle selector to determine if th
     3. (PW) partial win. Player 1 wins territory but loses 1/2 of armies.
     Player 2 loses territory and armies.
 
-    4. (PL) partial loss. Player 1 and Player 2 keep territories but lose 1/2 of armies. *
+    4. (PL) partial loss. Player 1 and Player 2 keep territories but lose 1/2 of armies.
 
 Examples:
                           // Possible outcomes // assumes 1 territory
