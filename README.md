@@ -5,7 +5,7 @@ A map based domination game.
 This game will be similiar to Risk where the point is to dominate the whole map against adversaries. 
 
 
-                                      *Game Movement and Army Refresh*
+                                          *Game Movement and Army Refresh*
                                     
 Each player will start with 2 armies on their starting territors.
 
@@ -19,7 +19,7 @@ player 2 - has 2 armies on each territory. (2 armies on 2 territories = 4 armies
 
 this process will go on until player 1 and player 2 meet on the map.
 
-                                                *battle*
+                                                   *battle*
 
 When two armies meet they can battle for the ownership of a territory and it's precious +1 army on refresh.
 
@@ -28,9 +28,9 @@ This player will always lose if attacked.
 
 to keep it interesting there will be a random battle selector to determine if the armies win/lose or draw.
 
-*Battle Logic*
+                                                  *Battle Logic*
 
-  This examples assume:
+* This examples assume:
   Player 1 => attacks => Player 2
     1. (TW) total win no loss in army. Player 1 gains territory.
     
@@ -42,11 +42,11 @@ to keep it interesting there will be a random battle selector to determine if th
     3. (PW) partial win. Player 1 wins territory but loses 1/2 of armies.
     Player 2 loses territory and armies.
 
-    4. (PL) partial loss. Player 1 and Player 2 keep territories but lose 1/2 of armies.
+    4. (PL) partial loss. Player 1 and Player 2 keep territories but lose 1/2 of armies. *
 
 Examples:
-*Possible outcomes* *assumes 1 territory*
-Player 1 (1 army) => attacks => player 2 (1 army)   => no outcome. 1 army can't attack.
+                          // Possible outcomes // assumes 1 territory
+*Player 1 (1 army) => attacks => player 2 (1 army)   => no outcome. 1 army can't attack.
 Player 1 (2 army) => attacks => player 2 (1 army)   => Total Win
                                                                 P1 Gains P2 territory and keeps all armies.
                                                                 P1 = 2 territories with 1 army on each
@@ -77,10 +77,10 @@ Player 1 (3 army ) => attacks => player 2 (2 army)  => Total Win
                                                                 p1 = 2 army and 1 territory
                                                                 p2 = 1 army and 1 territory.
                                                     => Draw
-                                                                No change with p1 & p2
+                                                                No change with p1 & p2 *
 
 
-                                                    *army generation / end of turn *
+                                           *army generation / end of turn *
 Once your turn has ended you are eligble for new armies to spawn equal to the # of territories you are in control of.
 
 player 1 has 5 territories and 10 armies ( 2 per territory) = at end of turn p1 will have 5 additional armies (15 total).
