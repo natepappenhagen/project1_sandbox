@@ -12,7 +12,7 @@ Each player will start with 2 armies on their starting territors.
 player 1 - moves to new territory. (1 army on 2 territories = 2 armies).
 player 2 - moves to new territory. (1 army on 2 territories = 2 armies).
 
-*both players played and then receive additional # of armies PER territory  placed on the LAST SQUARES SELECTED BY PLAYER.*
+both players played and then receive additional # of armies PER territory  placed on the LAST SQUARES SELECTED BY PLAYER.
 
 player 1 - has 2 armies on each territory. (2 armies on 2 territories = 4 armies)
 player 2 - has 2 armies on each territory. (2 armies on 2 territories = 4 armies)
@@ -28,12 +28,12 @@ This player will always lose if attacked.
 
 to keep it interesting there will be a random battle selector to determine if the armies win/lose or draw.
 
-                                                  *Battle Logic*
+                                                 *Battle Logic*
 
 This examples assume:
-  Player 1 => attacks => Player 2
+  Player 1 -> attacks -> Player 2
+	
     1. (TW) total win no loss in army. Player 1 gains territory.
-    
     2. (TL) total loss.
                    Player 1 is left with 1 army on the same territory.
                    Player 1 loses all their armies used for attack.
@@ -44,40 +44,54 @@ This examples assume:
 
     4. (PL) partial loss. Player 1 and Player 2 keep territories but lose 1/2 of armies.
 
-Examples:
-                          // Possible outcomes // assumes 1 territory
-*Player 1 (1 army) => attacks => player 2 (1 army)   => no outcome. 1 army can't attack.
-Player 1 (2 army) => attacks => player 2 (1 army)   => Total Win
-                                                                P1 Gains P2 territory and keeps all armies.
-                                                                P1 = 2 territories with 1 army on each
-                                                                P2 = 0 territories with 0 armies on each.
-                                                    => Total Loss
-                                                                P1 doesn't gain P2 territory and is left with 1 army.
-                                                                P1 = 1 army on 1 territory
-                                                                P2 = 1 army on 1 territory
 
-                                                    => Draw     
+                         *   Possible outcomes // assumes 1 territory  *
+													 
+Player 1 (1 army) -> attacks -> player 2 (1 army)   -> no outcome. 1 army can't attack.
+
+Player 1 (2 army) -> attacks => player 2 (1 army)   -> Total Win
+
+                                                                P1 Gains P2 territory and keeps all armies.
+																																
+                                                                P1 - 2 territories with 1 army on each
+																																
+                                                                P2 - 0 territories with 0 armies on each.
+																																
+                                                    -> Total Loss
+																										
+                                                                P1 doesn't gain P2 territory and is left with 1 army.
+																																
+                                                                P1 - 1 army on 1 territory
+																																
+                                                                P2 - 1 army on 1 territory
+
+                                                    -> Draw     
                                                                 No change with P1 & P2
-Player 1 (3 army ) => attacks => player 2 (2 army)  => Total Win
+																																
+Player 1 (3 army ) -> attacks -> player 2 (2 army)  -> Total Win
+
                                                                 P1 Gains P2 territory and keeps all armies
-                                                                P1 = 2 territories with two armies on the conquered territory
+																																
+                                                                P1 - 2 territories with two armies on the conquered territory
                                                                      and 1 army on the original territory for (3 armies)
-                                                                p2 = 0 territory and 0 armies.
-                                                   => Total Loss
+																																		 
+                                                                p2 - 0 territory and 0 armies.
+																																
+                                                   -> Total Loss
                                                                 P1 loses 2 armies used in attack and gains no territory.
-                                                                p1 = 1 army on 1 territory
-                                                                p2 = 2 armyon 1 territory.
-                                                   => Partial Win 
+                                                                p1 - 1 army on 1 territory
+                                                                p2 - 2 armyon 1 territory.
+                                                   -> Partial Win 
                                                                 P1 gains p2 territors but loses 1/2 of their armies (rounded)
-                                                                p1 = 2 territories but only 1 army on each (rounded from 3).
-                                                                p2 = 0 territories and 0 armies
-                                                   => Partial Loss
+                                                                p1 - 2 territories but only 1 army on each (rounded from 3).
+                                                                p2 - 0 territories and 0 armies
+                                                   -> Partial Loss
                                                                 p1 loses some armies in attack and p2 loses some armies.
                                                                    no territory change.
-                                                                p1 = 2 army and 1 territory
-                                                                p2 = 1 army and 1 territory.
-                                                    => Draw
-                                                                No change with p1 & p2 *
+                                                                p1 - 2 army and 1 territory
+                                                                p2 - 1 army and 1 territory.
+                                                    -> Draw
+                                                                No change with p1 & p2 
 
 
                                            *army generation / end of turn *
