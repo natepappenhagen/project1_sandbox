@@ -1,0 +1,12 @@
+.board {
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.cells {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+  padding: 5px;
+}
