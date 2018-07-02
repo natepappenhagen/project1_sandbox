@@ -3,13 +3,32 @@
 let rows = [0, 0, 0, 0];
 let cols = [0, 0, 0, 0];
 
-for (let i = 0; i < rows.length; i++) {
+for (let y = 0; y < rows.length; y++) {
   $(".board").append("<div></div>");
 
   for (let x = 0; x < cols.length; x++) {
-    $(".board").append(`<div id="cell-${i}-${x}" class="cells">`);
+    $(".board").append(`<div id="cell-${x}-${y}" class="cells" data="location${x},${y}">`);
   }
+
 }
+
+
+// let logEachCellWhenClicked = () => {
+	$('.cells').click(function(event) {
+
+		console.log(this.id);
+		});
+
+
+
+
+// console.log($('cells').hasClass(`cell-${(x+1)}-${y}`);
+// console.log($('.board').hasClass(`cell-${x-1}-${y}`);
+// console.log($('.board').hasClass(`cell-${x}-${y+1}`);
+// console.log($('.board').hasClass(`cell-${x}-${y-1}`);
+
+
+
 
 // add a button for player 1 and player 2
 function player1ButtonFunction() {
