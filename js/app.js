@@ -3,7 +3,7 @@
 let rows = [0, 0, 0, 0];
 let cols = [0, 0, 0, 0];
 
-for (let i = rows.length; i > 0; i--) {
+for (let i = 0; i < rows.length; i++) {
   $(".board").append("<div></div>");
 
   for (let x = 0; x < cols.length; x++) {
