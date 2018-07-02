@@ -78,57 +78,63 @@ let button2Listener = function() {
 button2Listener();
 // //////////////////////////////////////////////////////////////////////
 
-// when 'player1 button' is clicked.. any square clicked will be red
 let player1ClickRed = function() {
 
-$("#p1button").click(function(event) {
-  $("#p1button").addClass("p1ButtonClicked");
-//  console.log("p1ButtonClicked Class is added ");
-
-  if ($("#p1button").hasClass("p1ButtonClicked")) {
- //   console.log("its okay");
-    // another even listener to change squares according to player 1 while button is clicked"
     $(".cells").click(function(event) {
-      $(event.target).css("background-color", "red");
-      $(event.target).addClass("player1");
+    	if ($("#p1button").hasClass("p1ButtonClicked")) {
+    		 $(event.target).css("background-color", "red");
+     		 $(event.target).addClass("player1");
+    	}
     });
-
-    // this will check to see if whats on the board is player 1
-
     checkSquaresForPlayer1();
-  }
-});
-
 }
 player1ClickRed();
-
-
 
 
 // when 'player2 button' is clicked.. any square clicked will be blue
 let player2ClickBlue = function() {
 
-$("#p2button").click(function(event) {
-  $("#p2button").addClass("p2ButtonClicked");
-//  console.log("p2ButtonClicked Class is added ");
-
-  if ($("#p2button").hasClass("p2ButtonClicked")) {
-//    console.log("its okay");
-    // another even listener to change squares according to player 1 while button is clicked"
     $(".cells").click(function(event) {
-      $(event.target).css("background-color", "blue");
-      $(event.target).addClass("player2");
+    	if ($("#p2button").hasClass("p2ButtonClicked")) {
+    		 $(event.target).css("background-color", "blue");
+     		 $(event.target).addClass("player2");
+    	}
     });
-
-    // this will check to see if whats on the board is player 2
-
     checkSquaresForPlayer2();
-  }
-
-});
-
 }
 player2ClickBlue();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
