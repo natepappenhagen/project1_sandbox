@@ -7,7 +7,7 @@ for (let y = 0; y < rows.length; y++) {
   $(".board").append("<div></div>");
 
   for (let x = 0; x < cols.length; x++) {
-    $(".board").append(`<div id="cell-${x}-${y}" class="cells" data="location${x},${y}">`);
+    $(".board").append(`<div id="cell-${x}-${y}" class="cells" data-x="${x}" data-y="${y}">`);
   }
 
 }
@@ -15,14 +15,13 @@ for (let y = 0; y < rows.length; y++) {
 
 // let logEachCellWhenClicked = () => {
 	$('.cells').click(function(event) {
+		console.log($(this).data('x'))
+		console.log($(this).data('y')) ;
 
-		console.log(this.id);
 		});
 
 
 
-
-// console.log($('cells').hasClass(`cell-${(x+1)}-${y}`);
 // console.log($('.board').hasClass(`cell-${x-1}-${y}`);
 // console.log($('.board').hasClass(`cell-${x}-${y+1}`);
 // console.log($('.board').hasClass(`cell-${x}-${y-1}`);
