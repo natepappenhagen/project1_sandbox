@@ -101,11 +101,13 @@ function battle () {
 	let randomWinner = Math.floor(Math.random() * 10) + 1
 
 	if (randomWinner > 5) {
-		$(this).removeClass('.player1')
-		$(this).css("background-color","yellow")
+		$(this).removeClass('player1')
+		//$(this).css("background-color","yellow")
+		$(this).addClass('player2')
 	} else {
-		$(this).removeClass('.player2')
-		$(this).css("background-color","orange")
+		$(this).removeClass('player2')
+		//$(this).css("background-color","orange")
+		$(this).addClass('player1')
 	}
 
 	})
@@ -149,13 +151,15 @@ $("#p2button").click(function (event) {
 
 
 
+// $(`.${cells}`).each(function () {
+// 	let player1RedSquares
+// 	fairMove(playerClass, $(this).data('x'), $(this).data('y'));
+
+
+// });
 
 
 
-// choose a random winner
-// let winner = 
-//  clear all classes from that winner
-//  add a class of the winner
 
 
 
