@@ -1,7 +1,7 @@
 // Make the map
 
-let rows = [0, 0, 0, 0, 0, 0,];
-let cols = [0, 0, 0, 0, 0, 0,];
+let rows = [0, 0, 0, 0, 0, 0, 0,];
+let cols = [0, 0, 0, 0, 0, 0, 0,];
 
 
 
@@ -18,23 +18,15 @@ for (let y = 0; y < rows.length; y++) {
 // sets up random first board
 
 let randomStart = () => {
+        let divLengthX = $(".cells").length;
 
-	let player1Random = () => {
-	let divLengthX = $(".cells").length;
+        let random = Math.floor(Math.random() * divLengthX);
+        $(".cells").eq(random).addClass("player1");
 
-	let random = Math.floor( Math.random() * divLengthX );
-	$(".cells").eq(random).addClass("player1");
-	};
+        let divLengthY = $(".cells").length;
 
-	let player2Random = () => {
-	let divLengthY = $(".cells").length;
-
-	let random = Math.floor( Math.random() * divLengthY );
-	$(".cells").eq(random).addClass("player2");
-	};
-
-player1Random();
-player2Random();
+        random = Math.floor(Math.random() * divLengthY);
+        $(".cells").eq(random).addClass("player2");
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -104,10 +96,12 @@ function battle () {
 		$(this).removeClass('player1')
 		//$(this).css("background-color","yellow")
 		$(this).addClass('player2')
+		$(this).addClass('p2winner')
 	} else {
 		$(this).removeClass('player2')
 		//$(this).css("background-color","orange")
 		$(this).addClass('player1')
+		$(this).addClass('p1winner')
 	}
 
 	})
@@ -117,8 +111,11 @@ function battle () {
 ////// button listener
 $("#p1button").click(function (event) {
 	//clears cells from other player
+	$('.cells').removeClass('p1winner')
+	$('.cells').removeClass('p2winner')
 	$('.cells').removeClass('can-move');
 	$('.cells').removeClass('can-attack');
+
 
 	// toggle between players
 	$("#p1button").addClass("p1ButtonClicked btn-danger").removeClass('btn-secondary');
@@ -133,6 +130,8 @@ $("#p1button").click(function (event) {
 
 $("#p2button").click(function (event) {
 	// clears cells from other player
+	$('.cells').removeClass('p1winner')
+	$('.cells').removeClass('p2winner')
 	$('.cells').removeClass('can-move');
 	$('.cells').removeClass('can-attack');
 
