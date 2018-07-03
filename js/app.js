@@ -1,7 +1,7 @@
 // Make the map
 
-let rows = [0, 0, 0, 0, 0, 0, 0,0];
-let cols = [0, 0, 0, 0, 0, 0, 0,0];
+let rows = [0, 0, 0, 0, 0, 0,];
+let cols = [0, 0, 0, 0, 0, 0,];
 
 
 
@@ -58,6 +58,17 @@ $('.cells').click(function (event) {
 	}
 });
 
+
+function canAttack(playerClass) {
+//magic below
+	$(`.${playerClass}`).each(function () {
+		if ($(this).hasClass('can-move')){
+			$(this).addClass('can-attack');
+		}
+	})
+// magic above
+}
+
 function fairMove(playerClass, x, y) {
 //magic below
 
@@ -78,25 +89,80 @@ function showFairMoves(playerClass) {
 	});
 }
 
+
+// battle
+function battle () {
+
+	//if a square with a class of 'can-attack' is clicked then 
+	$('.can-attack').click(function (event) {
+
+	console.log('you attacked someone');
+
+	let randomWinner = Math.floor(Math.random() * 10) + 1
+
+	if (randomWinner > 5) {
+		$(this).removeClass('.player1')
+		$(this).css("background-color","yellow")
+	} else {
+		$(this).removeClass('.player2')
+		$(this).css("background-color","orange")
+	}
+
+	})
+}
+
+
 ////// button listener
 $("#p1button").click(function (event) {
 	//clears cells from other player
 	$('.cells').removeClass('can-move');
+	$('.cells').removeClass('can-attack');
+
+	// toggle between players
 	$("#p1button").addClass("p1ButtonClicked btn-danger").removeClass('btn-secondary');
-	// to make sure only player 1 has the board
 	$("#p2button").removeClass("p2ButtonClicked btn-primary").addClass("btn-secondary");
+
+	// show the fair moves and attack moves
 	showFairMoves("player1");
+	canAttack("player2");
+	battle();
 
 });
 
 $("#p2button").click(function (event) {
 	// clears cells from other player
 	$('.cells').removeClass('can-move');
+	$('.cells').removeClass('can-attack');
+
+	// toggle between players
 	$("#p2button").addClass("p2ButtonClicked btn-primary").removeClass('btn-secondary');
-	// to make sure only player 2 has the board
 	$("#p1button").removeClass("p1ButtonClicked btn-danger").addClass("btn-secondary");
+
+	// show the fair moves and attack moves
 	showFairMoves("player2");
+	canAttack("player1");
+	battle();
+
+
+
 });
+
+
+
+
+
+
+// choose a random winner
+// let winner = 
+//  clear all classes from that winner
+//  add a class of the winner
+
+
+
+
+
+
+
 
 
 

@@ -20,7 +20,7 @@
 }
 
 .can-attack{
-  background-color: purple;
+  background-color: black;
 }
 
 .player1{
@@ -29,4 +29,8 @@
 
 .player2{
   background-color: rgb(65, 121, 164);
+}
+
+.can-attack{
+  background-color: black;
 }
