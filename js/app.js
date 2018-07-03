@@ -1,7 +1,7 @@
 // Make the map
 
-let rows = [0, 0, 0, 0, 0, 0];
-let cols = [0, 0, 0, 0, 0, 0];
+let rows = [0, 0, 0, 0, 0, 0, 0,0];
+let cols = [0, 0, 0, 0, 0, 0, 0,0];
 
 
 
