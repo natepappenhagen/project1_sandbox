@@ -1,25 +1,26 @@
-# project1_Game
+# project1_World_DOM-ination
 A map based domination game.
 
 
 This game will be similar to Risk where the point is to dominate the whole map against adversaries. 
 
 
-                                          *Game Movement and Army Refresh*
+                           *Game Movement and Army Refresh*
                                     
 Each player will start with 2 armies on their starting territories.
 
+```
 player 1 - moves to new territory. (1 army on 2 territories = 2 armies).
 player 2 - moves to new territory. (1 army on 2 territories = 2 armies).
-
+```
 both players played and then receive additional # of armies PER territory  placed on the LAST SQUARES SELECTED BY PLAYER.
-
+```
 player 1 - has 2 armies on each territory. (2 armies on 2 territories = 4 armies)
 player 2 - has 2 armies on each territory. (2 armies on 2 territories = 4 armies)
-
+```
 this process will go on until player 1 and player 2 meet on the map.
 
-                                                   *battle*
+                                     *battle*
 
 When two armies meet they can battle for the ownership of a territory and it's precious +1 army on refresh.
 
@@ -28,7 +29,7 @@ This player will always lose if attacked.
 
 to keep it interesting there will be a random battle selector to determine if the armies win/lose or draw.
 
-                                                 *Battle Logic*
+                                  *Battle Logic*
 ```
 This examples assume
   Player 1 -> attacks -> Player 1
@@ -43,8 +44,8 @@ This examples assume
 
     4. (PL) partial loss. Player 1 and Player 2 keep territories but lose 1/2 of armies.
 ```
-                            Possible outcomes // assumes 1 territory  
-											 
+                        *Possible outcomes // assumes 1 territory*  
+```								 
 Player 1 (1 army) -> attacks -> player 2 (1 army)
   - no outcome. 1 army can't attack.
 
@@ -82,8 +83,8 @@ Player 1 (3 army ) -> attacks -> player 2 (2 army)
   - Draw
     1. No change with p1 & p2 
 ```
-**
-                                           *army generation / end of turn *
+
+                           *army generation / end of turn *
 Once your turn has ended you are eligble for new armies to spawn equal to the # of territories you are in control of.
 
 player 1 has 5 territories and 10 armies ( 2 per territory) = at end of turn p1 will have 5 additional armies (15 total).
@@ -92,7 +93,8 @@ the additional 5 will be put near the 'front line'.
 Once multiple territories have been won the new armies will generate on the 'front line'.
 the 'front line' is last selected territories from turn. This will make sure new armies generate where you need them.
 
-                                                   *How to win*
+                                  *How to win*
+
 Control all the squares.
 
 Once all players have played their turn then 

@@ -11,3 +11,19 @@
   padding: 5px;
   margin: 5px;
 }
+
+.can-move{
+  background-color: green;
+}
+
+.can-attack{
+  background-color: purple;
+}
+
+.player1{
+  background-color: red;
+}
+
+.player2{
+  background-color: blue;
+}
