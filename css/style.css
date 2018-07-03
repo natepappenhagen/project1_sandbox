@@ -5,8 +5,8 @@
 
 .cells {
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   background-color: grey;
   padding: 5px;
   margin: 5px;
