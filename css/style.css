@@ -5,10 +5,10 @@
 
 .cells {
   display: inline-block;
-  height: 25px;
-  width: 25px;
+  height: 10px;
+  width: 10px;
   background-color: rgba(196, 196, 196, 0.5);
-  padding: 30px;
+  padding: 20px;
   margin: 3px;
   border-radius: 50px;
   
