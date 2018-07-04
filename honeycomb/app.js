@@ -1,15 +1,17 @@
+console.log('hello');
+
 // Make the map
 
-let rows = [0, 0, 0, 0, 0, 0, 0,0,0,0];
-let cols = [0, 0, 0, 0, 0, 0, 0,0,0,0];
+let rows = [0, 0, 0, 0, 0, 0,0,0,0,];
+let cols = [0, 0, 0, 0, 0, 0,0,0,0,];
 
 
 
 for (let y = 0; y < rows.length; y++) {
-	$(".board").append("<div></div>");
+	//$("#grid").append("<div></div>");
 
 	for (let x = 0; x < cols.length; x++) {
-		$(".board").append(`<div id="cell-${x}-${y}" class="cells" data-x="${x}" data-y="${y}">`);
+		$("#grid").append(`<li><div id="cell-${x}-${y}" class="hexagon" data-x="${x}" data-y="${y}"></li>`);
 	}
 
 
@@ -18,21 +20,21 @@ for (let y = 0; y < rows.length; y++) {
 // sets up random first board
 
 let randomStart = () => {
-        let divLengthX = $(".cells").length;
+        let divLengthX = $(".hexagon").length;
 
         let random = Math.floor(Math.random() * divLengthX);
-        $(".cells").eq(random).addClass("player1");
+        $(".hexagon").eq(random).addClass("player1");
 
-        let divLengthY = $(".cells").length;
+        let divLengthY = $(".hexagon").length;
 
         random = Math.floor(Math.random() * divLengthY);
-        $(".cells").eq(random).addClass("player2");
+        $(".hexagon").eq(random).addClass("player2");
 }
 
 /////////////////////////////////////////////////////////////////////////////
 
-$('.cells').click(function (event) {
-//	only allow moves to cells that have the class can-move
+$('.hexagon').click(function (event) {
+//	only allow moves to hexagons that have the class can-move
 	if (!$(this).hasClass('can-move')) {
 		return false;
 	}
@@ -110,12 +112,12 @@ function battle () {
 
 ////// button listener
 $("#p1button").click(function (event) {
-	//clears cells from other player
+	//clears hexagon from other player
 
-	$('.cells').removeClass('p1winner')
-	$('.cells').removeClass('p2winner')
-	$('.cells').removeClass('can-move');
-	$('.cells').removeClass('can-attack');
+	$('.hexagon').removeClass('p1winner')
+	$('.hexagon').removeClass('p2winner')
+	$('.hexagon').removeClass('can-move');
+	$('.hexagon').removeClass('can-attack');
 
 
 	// toggle between players
@@ -132,11 +134,11 @@ $("#p1button").click(function (event) {
 });
 
 $("#p2button").click(function (event) {
-	// clears cells from other player
-	$('.cells').removeClass('p1winner')
-	$('.cells').removeClass('p2winner')
-	$('.cells').removeClass('can-move');
-	$('.cells').removeClass('can-attack');
+	// clears hexagon from other player
+	$('.hexagon').removeClass('p1winner')
+	$('.hexagon').removeClass('p2winner')
+	$('.hexagon').removeClass('can-move');
+	$('.hexagon').removeClass('can-attack');
 
 	// toggle between players
 	$("#p2button").addClass("p2ButtonClicked btn-primary").removeClass('btn-secondary');
@@ -153,7 +155,7 @@ $("#p2button").click(function (event) {
 
 
 
-// $(`.${cells}`).each(function () {
+// $(`.${hexagon}`).each(function () {
 // 	let player1RedSquares
 // 	fairMove(playerClass, $(this).data('x'), $(this).data('y'));
 
