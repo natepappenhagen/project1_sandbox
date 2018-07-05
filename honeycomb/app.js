@@ -114,7 +114,7 @@ const limitPlayerClicks = () => {
 
 
 let clickCounter = 0;
-let clickCountMax = 2;
+let clickCountMax = 3;
 	
 		$('.hexagon').click(function (event) {
 		clickCounter++
@@ -132,7 +132,7 @@ let clickCountMax = 2;
 ////// button listener
 $("#p1button").click(function (event) {
 
-	limitPlayerClicks();
+
 	//clears hexagon from other player
 
 	$('.hexagon').removeClass('p1winner')
@@ -149,12 +149,11 @@ $("#p1button").click(function (event) {
 	showFairMoves("player1");
 	canAttack("player2");
 	battle();
-
+	limitPlayerClicks();
 });
 
 $("#p2button").click(function (event) {
 
-	limitPlayerClicks();
 
 	// clears hexagon from other player
 	$('.hexagon').removeClass('p1winner')
@@ -170,6 +169,7 @@ $("#p2button").click(function (event) {
 	showFairMoves("player2");
 	canAttack("player1");
 	battle();
+	limitPlayerClicks();
 
 
 

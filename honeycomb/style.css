@@ -92,9 +92,9 @@
   background-color: rgba(42, 231, 28, 0.29);
 }
 
-.can-attack{
+/*.can-attack{
   background-color: black;
-}
+}*/
 
 .player1{
   background-color: rgb(206, 37, 37);
@@ -105,7 +105,7 @@
 }
 
 .can-attack{
-  background-color: black;
+  background-color: rgba(255, 133, 20, 0.71)
 }
 
 .p1winner {
