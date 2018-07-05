@@ -2,8 +2,8 @@ console.log('hello');
 
 // Make the map
 
-let rows = [0, 0, 0, 0, 0, 0,0];
-let cols = [0, 0, 0, 0, 0, 0,0];
+let rows = [0, 0, 0, 0, 0, 0,0,];
+let cols = [0, 0, 0, 0, 0, 0,0,];
 
 
 
@@ -51,6 +51,7 @@ $('.hexagon').click(function (event) {
 		$(this).addClass("player1");
 	}
 });
+
 
 
 function canAttack(playerClass) {
@@ -109,9 +110,29 @@ function battle () {
 	})
 }
 
+const limitPlayerClicks = () => {
+
+
+let clickCounter = 0;
+let clickCountMax = 2;
+	
+		$('.hexagon').click(function (event) {
+		clickCounter++
+		if (clickCounter >= clickCountMax){
+			$('.hexagon').removeClass('can-move')
+			$('.hexagon').removeClass('can-attack')
+			//reset back to 0
+			clickCounter = 0;
+		}
+	})
+
+};
+
 
 ////// button listener
 $("#p1button").click(function (event) {
+
+	limitPlayerClicks();
 	//clears hexagon from other player
 
 	$('.hexagon').removeClass('p1winner')
@@ -129,11 +150,12 @@ $("#p1button").click(function (event) {
 	canAttack("player2");
 	battle();
 
-
-
 });
 
 $("#p2button").click(function (event) {
+
+	limitPlayerClicks();
+
 	// clears hexagon from other player
 	$('.hexagon').removeClass('p1winner')
 	$('.hexagon').removeClass('p2winner')
@@ -154,20 +176,20 @@ $("#p2button").click(function (event) {
 });
 
 
-
-// $(`.${hexagon}`).each(function () {
-// 	let player1RedSquares
-// 	fairMove(playerClass, $(this).data('x'), $(this).data('y'));
-
-
-// });
+// ///
+// 	let clickCounter = 0;
+// 	let clickCountMax = 2;
 
 
-
-
-
-
-
+// 		$('.hexagon').click(function (event) {
+// 		clickCounter++
+// 		if (clickCounter > clickCountMax){
+// 			$('.hexagon').removeClass('can-move')
+// 			$('.hexagon').removeClass('can-attack')
+// 			clickCounter = 0;
+// 		}
+// 	})
+// ///
 
 
 

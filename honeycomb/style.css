@@ -54,7 +54,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 5px;
+    border: 10px;
 /*    background: #fdbf00;*/
     -o-transform: skewY(-30deg) rotate(60deg);
     -moz-transform: skewY(-30deg) rotate(60deg);
