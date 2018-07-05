@@ -1,28 +1,19 @@
-/*body {
+body {
     background: #282828;
-}*/
-
-
+}
 
 .coordinates {
     display: inline;
 }
-
-/*my css*/
-
-
-
 
 .hexagon {
     background-color: grey;
   
 }
 
-
-
 #grid {
     position: relative;
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
     padding: 0; /* Clears unordered list default of 40px */
 }
@@ -86,8 +77,6 @@
     margin-left: 1%;
 }
 
-
-
 .can-move{
   background-color: rgba(42, 231, 28, 0.29);
 }
@@ -103,6 +92,7 @@
 .player2{
   background-color: rgb(65, 121, 164);
 }
+
 
 .can-attack{
   background-color: rgba(255, 133, 20, 0.71)
