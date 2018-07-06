@@ -1,5 +1,5 @@
 body {
-    background: #282828;
+    background: rgba(127, 127, 127, 0.44)
 }
 
 .coordinates {
@@ -7,13 +7,13 @@ body {
 }
 
 .hexagon {
-    background-color: grey;
+    background-color:;
   
 }
 
 #grid {
     position: relative;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     padding: 0; /* Clears unordered list default of 40px */
 }
@@ -105,3 +105,14 @@ body {
     background-color: rgb(65, 121, 164, .3);
 }
 
+
+.takenP1 {
+    background-color: (65, 121, 164, .3);
+}
+
+.takenP2 {
+    background-color: rgb(206, 37, 37, .3)
+}
+.lost {
+    background-color: black;
+}

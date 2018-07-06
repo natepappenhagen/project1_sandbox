@@ -81,6 +81,25 @@ function showFairMoves(playerClass) {
 }
 
 
+//update scores
+
+function updateScoresP1(playerClass) {
+	let playerScore = $(`.${playerClass}`).length
+
+	$('.p1Score').text(playerScore);
+	}
+function updateScoresP2(playerClass) {
+	let playerScore = $(`.${playerClass}`).length
+
+	$('.p2Score').text(playerScore);
+	}
+
+
+
+
+
+
+
 // battle
 function battle() {
 
@@ -90,18 +109,67 @@ function battle() {
   console.log('you attacked someone');
 
   let randomWinner = Math.floor(Math.random() * 10) + 1
+  let lengthOfPlayer1 = $(".player1").length;
+  let lengthOfPlayer2 = $(".player2").length;
+  let randomP1Square = Math.floor(Math.random() * lengthOfPlayer1);
+  let randomP2Square = Math.floor(Math.random() * lengthOfPlayer2);
 
-  if (randomWinner > 5) {
-   $(this).removeClass('player1')
+
+// if random # is greater than 3 and less than 6 then player2 wins
+  if (randomWinner >= 1 && randomWinner <= 4) {
+   $(this).removeClass("player 1 player1 can-move can-attack player2 player2");
     //$(this).css("background-color","yellow")
    $(this).addClass('player2')
    $(this).addClass('p2winner')
-  } else {
-   $(this).removeClass('player2')
+  }
+  // if random # is less than 3 and greater than 1 then player1 wins
+   if (randomWinner >= 5 && randomWinner <= 8) {
+
+   $(this).removeClass("player 1 player1 can-move can-attack player2 player2");
     //$(this).css("background-color","orange")
    $(this).addClass('player1')
    $(this).addClass('p1winner')
   }
+  //extra p1 square died in battle
+  if (randomWinner == 9) {
+  		let randomSingleP1SqDeath = $(".player1").eq(randomP1Square).removeClass("player 1 player1 can-move can-attack player2 player2");
+  			randomSingleP1SqDeath.addClass("player2")
+		 console.log("the worst - p1 lost an extra square in battle to p2. :(")
+  }
+  // player loses 1 random square
+  if (randomWinner == 9) {
+  		let randomSingleP2SqDeath = $(".player2").eq(randomP2Square).removeClass("player 1 player1 can-move can-attack player2 player2");
+  			randomSingleP2SqDeath.addClass("player1")
+		 console.log("the worst - p2 lost an extra square in battle to p1. :(")
+  }
+//   // player 2 loses a random square
+//   if (randomWinner == 11) {
+//   		$(".player2").eq(randomP2Square).removeClass("player2");
+// 		 console.log("An extra p2 square died in battle :(")
+//   }
+// // 
+// if (randomWinner == 12){
+
+// 	  	let $player1Loser = $(".player").eq(randomP1Square).removeClass(".player1");
+
+// 	  	$player1Loser.addClass("player2 takenP2")
+
+// 		 console.log("THE WORST - a square from player 2 (blue) was taken and added to player 2 (red)")
+// }
+// // 
+// if (randomWinner == 13){
+
+// 	  	let $player2Loser = $(".player2").eq(randomP2Square).removeClass(".player2");
+
+// 	  	$player2Loser.addClass("player1 takenP1")
+
+
+// 		 console.log("THE WORST - a square from player 1 (red) was taken and added to player 2 (blue)")
+// }
+
+
+
+
 
  })
 }
@@ -147,6 +215,8 @@ $("#p1button").click(function(event) {
  canAttack("player2");
  battle();
  limitPlayerClicks();
+ updateScoresP1("player1")
+ updateScoresP2("player2");
 });
 
 $("#p2button").click(function(event) {
@@ -167,7 +237,8 @@ $("#p2button").click(function(event) {
  canAttack("player1");
  battle();
  limitPlayerClicks();
-
+ updateScoresP1("player1")
+ updateScoresP2("player2");
 
 
 });
